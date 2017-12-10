@@ -207,4 +207,20 @@
 			<column name="permission_id" value="1" />
 		</insert>
 	</changeSet>
+	<changeSet id="1496828081377-24" author="twojcicki">
+		<createTable tableName="oauth_access_token">
+            <column name="token_id" type="VARCHAR(256)"/>
+            <column name="token" type="BYTEA"/>
+            <column name="authentication_id" type="VARCHAR(256)"/>
+            <column name="user_name" type="VARCHAR(256)"/>
+            <column name="client_id" type="VARCHAR(256)"/>
+            <column name="authentication"  type="BYTEA"/>
+            <column name="refresh_token" type="VARCHAR(256)"/>
+        </createTable>
+        <createTable tableName="oauth_refresh_token">
+            <column name="token_id" type="VARCHAR(256)"/>
+            <column name="token" type="BYTEA"/>
+            <column name="authentication" type="BYTEA"/>
+        </createTable>
+	</changeSet>
 </databaseChangeLog>
